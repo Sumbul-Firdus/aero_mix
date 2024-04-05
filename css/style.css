@@ -257,7 +257,7 @@ header .ham-burger.active span:nth-child(2){
   height: 12px;
   width: 12px;
   background-color: #fff;
-  visibility: hidden;
+  visibility: visible;
 }
 .swiper-pagination-bullet-active {
   border: 2px solid #fff;
