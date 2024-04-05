@@ -47,7 +47,7 @@
 </style>
 -->  
 </head>
-
+<!--
 <script>
 // Select the necessary elements
 const slider = document.querySelector('.swiper-wrapper');
@@ -80,7 +80,7 @@ slider.addEventListener('mouseleave', () => {
   interval = setInterval(nextSlide, 3000);
 });
 </script>
-
+-->
 <body>
 
  <!-- Start Header  -->
@@ -118,7 +118,7 @@ slider.addEventListener('mouseleave', () => {
  	 </div>
  </header>
  <!-- End Header  -->
- <br>
+ 
 <br>
 <br>
 <br>
@@ -732,6 +732,39 @@ https://youtu.be/QJXPIlBD9_k?si=k4KyN9l6Dazvjy6Q
 
 
  <!-- jquery -->
+	
+<script>
+// Select the necessary elements
+const slider = document.querySelector('.swiper-wrapper');
+const slides = document.querySelectorAll('.swiper-slide');
+
+let counter = 0;
+const slideWidth = slides[0].clientWidth;
+
+// Function to move to the next slide
+function nextSlide() {
+  if (counter < slides.length - 1) {
+    counter++;
+  } else {
+    counter = 0;
+  }
+  slider.style.transition = 'transform 0.5s ease-in-out';
+  slider.style.transform = 'translateX(' + (-slideWidth * counter) + 'px)';
+}
+
+// Automatically move to the next slide at a specified interval
+const interval = setInterval(nextSlide, 3000);
+
+// Pause the auto-scroll on mouse hover
+slider.addEventListener('mouseover', () => {
+  clearInterval(interval);
+});
+
+// Resume auto-scroll on mouse leave
+slider.addEventListener('mouseleave', () => {
+  interval = setInterval(nextSlide, 3000);
+});
+</script>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
